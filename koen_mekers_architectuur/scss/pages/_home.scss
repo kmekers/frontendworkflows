@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use './abstracts/variables' as vars;
+@use './abstracts/functions' as func;
+
+#colorBlocks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .color-block {
+    height: func.pxtorem(150);
+  }
+
+  @each $key, $color in vars.$colors {
+    .#{$key} {
+      background-color: $color;
+    }
+  }
+}
